@@ -1,5 +1,7 @@
 # portfolio
 
+##portfolio URL
+ https://kota1248-98213.web.app
 ## Project setup
 ```
 npm install
@@ -21,4 +23,4 @@ npm run lint
 ```
 
 ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+See[configuration Reference](https://cli.vuejs.org/config/).
