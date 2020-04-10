@@ -8,6 +8,10 @@
     </div>
     <img id="profilePicture" src="../assets/sample.jpg" >
     <p><img src="sample.jpg" alt="写真" width="50px" height="30px"></p>
+    <button @click="toggle" class="btn btn-success">toggle</button>
+    <Drawer @close="toggle" align="left" :closeable="true">
+      <div v-if="open">content here</div>
+    </Drawer>
   </div>
 </template>
 
@@ -81,6 +85,9 @@ a {
   color: #42b983;
 }
 
-
+hr{
+  margin:auto;
+  color:white;
+}
 
 </style>

@@ -1,12 +1,10 @@
 <template>
   <div id="drawerSection">
-      <img id="drawerButton" src="../assets/メニューの無料アイコン５.png">
       <span>Menu</span>
       <ul id="drawerMenuSection">
-
       </ul>
       <ul id="drawerMenuSection">
-
+       <img id="drawerButton" src="../assets/メニューの無料アイコン５.png">
       </ul>
   </div>
 </template>

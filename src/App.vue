@@ -6,7 +6,15 @@
     <Skill />
     <Vision />
     <Footer />
+  <div id="app">
+    <button @click="toggle" class="btn btn-success">toggle</button>
+    <Drawer @close="toggle" align="left" :closeable="true">
+      <div v-if="open">content here</div>
+    </Drawer>
   </div>
+  </div>
+
+
 </template>
 
 <script>
