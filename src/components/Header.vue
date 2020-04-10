@@ -1,11 +1,48 @@
 <template>
   <div id="app">
+<<<<<<< HEAD
    <button @click="toggle" class="btn btn-success">toggle</button>
     <Drawer @close="toggle" align="left" :closeable="true">
       <div v-if="open">content here</div> 
     </Drawer>
     <div class="absolute_test">
 </div>
+=======
+    <button
+      class="btn btn-success"
+      @click="toggle"
+    >
+      toggle
+    </button>
+    <Drawer
+      align="left"
+      :closeable="true"
+      @close="toggle"
+    >
+      <div v-if="open" />
+    </Drawer>
+    <header>
+      <div id="nav-drawer">
+        <input
+          id="nav-input"
+          type="checkbox"
+          class="nav-unshown"
+        >
+        <label
+          id="nav-open"
+          for="nav-input"
+        ><span /></label>
+        <label
+          id="nav-close"
+          class="nav-unshown"
+          for="nav-input"
+        />
+        <div id="nav-content">
+          ここに中身を入れる
+        </div>
+      </div>
+    </header>
+>>>>>>> 3248624b005c006146d3d49e2588590cc1ab806f
   </div>
 </template>
  
@@ -31,7 +68,7 @@ export default {
 </script>
 <style lang="scss">
 @import "~bootstrap/scss/bootstrap-reboot",
-"~bootstrap/scss/buttons";
+  "~bootstrap/scss/buttons";
 </style>
 <style>
 #app {
