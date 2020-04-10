@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 <template>
   <div id="app">
     <Header />
@@ -16,6 +17,7 @@ import About from './components/About.vue'
 import Skill from './components/Skill.vue'
 import Vision from './components/Vision.vue'
 import Footer from './components/Footer.vue'
+
 export default {
   name: 'App',
   components: {
