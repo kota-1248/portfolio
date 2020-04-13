@@ -32,11 +32,17 @@ export default {
   color: #20879f;
   font-weight: bold;
   font-size: 18pt;
+  font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  padding-bottom: 10px;
 }
 
 #aboutExplain {
   font-size: 12pt;
   color: #707070;
+  font-family:"Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; 
+  line-height:1.5;
+  margin: auto;
+  width: 65%;
 }
 
 ul {
