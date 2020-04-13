@@ -1,13 +1,50 @@
 <template>
- <div id="mainSection">
+  <div id="mainSection">
     <div id="userName">
-        K.ozawa
+      K.ozawa
     </div>
     <div id="companyName">
-        Seattleconsulting
+      Seattleconsulting
     </div>
-    <img id="profilePicture" src="../assets/sample.jpg" >
-    <p><img src="sample.jpg" alt="写真" width="50px" height="30px"></p>
+    <img
+      id="profilePicture"
+      src="../assets/sample.jpg"
+    >
+    <p>
+      <img
+        src="sample.jpg"
+        alt="写真"
+        width="50px"
+        height="30px"
+      >
+    </p>
+    <button
+      class="btn btn-success"
+      @click="toggle"
+    >
+      toggle
+    </button>
+    <Drawer
+      align="left"
+      :closeable="true"
+      @close="toggle"
+    >
+      <div v-if="open">
+        content here
+      </div>
+    </Drawer>
+    <img
+      id="profilePicture"
+      src="../assets/sample.jpg"
+    >
+    <p>
+      <img
+        src="sample.jpg"
+        alt="写真"
+        width="50px"
+        height="30px"
+      >
+    </p>
   </div>
 </template>
 
@@ -15,72 +52,81 @@
 export default {
   name: 'Main',
   props: {
-    msg: String
+    msg: {default: '', type: String}
   }
 }
 </script>
 
 <style scoped>
 #mainSection {
-    background: linear-gradient(180deg, #80E1F7, #06C1E6);
-    padding-bottom: 30px;
-    text-align: center;
+  background: linear-gradient(180deg, #80e1f7, #06c1e6);
+  padding-bottom: 30px;
+  text-align: center;
 }
+
 #userName {
-    color: #FFFFFF;
-    font-family: 'Noto Suns';
-    font-weight: bold;
-    font-size: 18pt;
-    text-shadow: 0px 0.5px 2px black;
-    padding: 20px 0;
-    border-bottom: 1px solid#FFFFFF;
-    margin: 0 310pt;
+  color: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: bold;
+  font-size: 18pt;
+  text-shadow: 0 0.5px 2px black;
+  padding: 20px 0;
+  border-bottom: 1px solid#fff;
+  margin: 0 310pt;
 }
+
 #companyName {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: #FFFFFF;
-    font-family: 'Noto Suns';
-    font-weight: bold;
-    font-size: 18pt;
-    text-shadow: 0px 0.5px 2px black;
-}
-h1{
-    color: white;
-    font-family: "Noto Sans";
-    font-weight:font-wight hold;
-    font-size:  18pt;
-    text-shadow: 1px 2px 3px #c0c0c0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: bold;
+  font-size: 18pt;
+  text-shadow: 0 0.5px 2px black;
 }
 
-.body{
-  background: linear-gradient(#80E1F7,#06C1E6);  
+h1 {
+  color: white;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: font-wight hold;
+  font-size: 18pt;
+  text-shadow: 1px 2px 3px #c0c0c0;
 }
 
-hr{
+.body {
+  background: linear-gradient(#80e1f7, #06c1e6);
+}
+
+hr {
   width: 120pt;
-  color:white;
-  size:1px;
+  color: white;
+  size: 1px;
 }
 
 #profilePicture {
-    border-radius: 50%;
-    width: 64px;
-    height: 64px;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
 }
+
 li {
   display: inline-block;
   margin: 0 10px;
 }
+
 a {
   color: #42b983;
 }
 
+hr{
+  margin:auto;
+  color:white;
+}
 
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 </style>

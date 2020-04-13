@@ -1,3 +1,4 @@
+eslint-disable no-unused-vars 
 <template>
   <div id="app">
     <Header />
@@ -39,3 +40,4 @@ export default {
   margin-top: 60px;
 }
 </style>
+
