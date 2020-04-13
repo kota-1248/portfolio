@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+eslint-disable no-unused-vars 
 <template>
   <div id="app">
     <Header />
@@ -7,15 +7,7 @@
     <Skill />
     <Vision />
     <Footer />
-  <div id="app">
-    <button @click="toggle" class="btn btn-success">toggle</button>
-    <Drawer @close="toggle" align="left" :closeable="true">
-      <div v-if="open">content here</div>
-    </Drawer>
   </div>
-  </div>
-
-
 </template>
 
 <script>
@@ -25,7 +17,6 @@ import About from './components/About.vue'
 import Skill from './components/Skill.vue'
 import Vision from './components/Vision.vue'
 import Footer from './components/Footer.vue'
-
 export default {
   name: 'App',
   components: {
@@ -49,3 +40,4 @@ export default {
   margin-top: 60px;
 }
 </style>
+
