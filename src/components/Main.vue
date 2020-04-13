@@ -1,50 +1,25 @@
 <template>
   <div id="mainSection">
     <div id="userName">
-      K.ozawa
+      <h1>K.Ozawa</h1>
+    </div>
+    <div id="line">
+      <hr
+        size="1"
+        width="170"
+        color="white"
+        align="center"
+      >
     </div>
     <div id="companyName">
-      Seattleconsulting
+      <h1>Seattleconsulting</h1>
     </div>
-    <img
-      id="profilePicture"
-      src="../assets/sample.jpg"
-    >
-    <p>
+    <div id="profile">
       <img
-        src="sample.jpg"
-        alt="写真"
-        width="50px"
-        height="30px"
+        id="profilePicture"
+        src="../assets/sample.jpg"
       >
-    </p>
-    <button
-      class="btn btn-success"
-      @click="toggle"
-    >
-      toggle
-    </button>
-    <Drawer
-      align="left"
-      :closeable="true"
-      @close="toggle"
-    >
-      <div v-if="open">
-        content here
-      </div>
-    </Drawer>
-    <img
-      id="profilePicture"
-      src="../assets/sample.jpg"
-    >
-    <p>
-      <img
-        src="sample.jpg"
-        alt="写真"
-        width="50px"
-        height="30px"
-      >
-    </p>
+    </div>
   </div>
 </template>
 
