@@ -1,13 +1,5 @@
 <template>
   <div id="app">
-<<<<<<< HEAD
-   <button @click="toggle" class="btn btn-success">toggle</button>
-    <Drawer @close="toggle" align="left" :closeable="true">
-      <div v-if="open">content here</div> 
-    </Drawer>
-    <div class="absolute_test">
-</div>
-=======
     <button
       class="btn btn-success"
       @click="toggle"
@@ -42,7 +34,6 @@
         </div>
       </div>
     </header>
->>>>>>> 3248624b005c006146d3d49e2588590cc1ab806f
   </div>
 </template>
  

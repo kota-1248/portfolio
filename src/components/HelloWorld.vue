@@ -109,8 +109,8 @@
 <script>
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
+  source: {
+    type: String
   }
 }
 </script>

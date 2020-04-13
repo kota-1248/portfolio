@@ -8,7 +8,7 @@
 export default {
   name: 'Footer',
   props: {
-    msg: String
+    msg: {default: '', type: String}
   }
 }
 </script>

@@ -1,11 +1,13 @@
 <template>
   <div id="drawerSection">
-      <span>Menu</span>
-      <ul id="drawerMenuSection">
-      </ul>
-      <ul id="drawerMenuSection">
-       <img id="drawerButton" src="../assets/メニューの無料アイコン５.png">
-      </ul>
+    <span>Menu</span>
+    <ul id="drawerMenuSection" />
+    <ul id="drawerMenuSection">
+      <img
+        id="drawerButton"
+        src="../assets/メニューの無料アイコン５.png"
+      >
+    </ul>
   </div>
 </template>
 
@@ -13,7 +15,7 @@
 export default {
   name: 'Menu',
   props: {
-    msg: String
+    msg: {default: '', type: String}
   }
 }
 </script>
