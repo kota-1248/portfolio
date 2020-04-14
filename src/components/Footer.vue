@@ -1,6 +1,15 @@
 <template>
   <div id="footerSection">
-    <span>Footer</span>
+    <a
+      href="#app"
+      @click="clickSmoothScroll()"
+    ><img
+      id="footerScroll"
+      src="../assets/footer.png"
+    ></a>
+    <div id="footerCopyright">
+      &copy; Seattleconsulting
+    </div>
   </div>
 </template>
 

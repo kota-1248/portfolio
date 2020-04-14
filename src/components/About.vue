@@ -5,7 +5,7 @@
     </div>
     <div id="aboutExplain">
       <p>
-        ozawa
+        茨城県出身の新入社員です。大学では、国際経営学について学んでいました。
       </p>
     </div>
   </div>
@@ -25,7 +25,9 @@ export default {
 #aboutSection {
   background-color: #f5f5f5;
   text-align: center;
-  padding: 10px;
+  padding: 40px 0;
+  height: 100px;
+  width: 100%;
 }
 
 #aboutTitle {
@@ -39,8 +41,8 @@ export default {
 #aboutExplain {
   font-size: 12pt;
   color: #707070;
-  font-family:"Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; 
-  line-height:1.5;
+  font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.5;
   margin: auto;
   width: 65%;
 }

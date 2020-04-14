@@ -1,4 +1,3 @@
-eslint-disable no-unused-vars 
 <template>
   <div id="app">
     <Header />
@@ -6,6 +5,7 @@ eslint-disable no-unused-vars
     <About />
     <Skill />
     <Vision />
+    <sample />
     <Footer />
   </div>
 </template>
@@ -16,6 +16,7 @@ import Main from './components/Main.vue'
 import About from './components/About.vue'
 import Skill from './components/Skill.vue'
 import Vision from './components/Vision.vue'
+import sample from './components/sample.vue'
 import Footer from './components/Footer.vue'
 export default {
   name: 'App',
@@ -25,19 +26,68 @@ export default {
     About,
     Skill,
     Vision,
+    sample,
     Footer
+  },
+  data() {
+    return {
+      scrollY: 0
+    };
+  },
+  computed: {
+    isShow() {
+      return this.scrollY > 200 ? true : false;
+    }
+  },
+  mounted() {
+    // スクロールを取得
+    window.addEventListener("scroll", this.onScroll);
+    window.addEventListener("load", () => {
+      this.onScroll();
+    });
+  },
+  methods: {
+    // スクロール値の取得
+    onScroll() {
+      this.scrollY = window.pageYOffset;
+    }
   }
-}
+};
+
 </script>
 
-<style>
+<style lang="scss">
+.scroll-top {
+  position: fixed;
+  background-color: blue;
+  padding: 10px 16px;
+  border-radius: 500px;
+  display: none;
+
+  &__ico {
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  max-width: 768px;
+  height: 1024px;
 }
 </style>
-
