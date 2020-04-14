@@ -37,6 +37,7 @@ export default {
   background: linear-gradient(180deg, #80e1f7, #06c1e6);
   padding-bottom: 30px;
   text-align: center;
+  margin-top: 40px;
 }
 
 #userName {
@@ -72,12 +73,6 @@ h1 {
   background: linear-gradient(#80e1f7, #06c1e6);
 }
 
-hr {
-  width: 120pt;
-  color: white;
-  size: 1px;
-}
-
 #profilePicture {
   border-radius: 50%;
   width: 64px;
@@ -98,9 +93,9 @@ a {
   color: #42b983;
 }
 
-hr{
-  margin:auto;
-  color:white;
+hr {
+  margin: 0, auto;
+  color: white;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
