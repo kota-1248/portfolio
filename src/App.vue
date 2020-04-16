@@ -1,12 +1,24 @@
 <template>
-  <div id="app">
-    <Header />
-    <Main />
-    <About />
-    <Skill />
-    <Vision />
-    <sample />
-    <Footer />
+  <div>
+    <div id="app">
+      <Header />
+      <Main />
+      <About />
+      <Skill />
+      <Vision />
+      <sample />
+      <Footer />
+    </div>
+    <transition name="fade">
+      <a
+        v-show="isShow"
+        v-scroll-to="'#top'"
+        href="#app"
+        class="scroll-top"
+      >
+        <i class="fa fa-angle-up fa-lg scroll-top__ico" />
+      </a>
+    </transition>
   </div>
 </template>
 
@@ -18,6 +30,13 @@ import Skill from './components/Skill.vue'
 import Vision from './components/Vision.vue'
 import sample from './components/sample.vue'
 import Footer from './components/Footer.vue'
+import Vue from "vue";
+import VueScrollTo from "vue-scrollto";
+Vue.use(VueScrollTo, {
+  container: "body",
+  duration: 500,
+  easing: "ease"
+});
 export default {
   name: 'App',
   components: {

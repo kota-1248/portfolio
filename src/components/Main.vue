@@ -38,6 +38,7 @@ export default {
   padding-bottom: 30px;
   text-align: center;
   margin-top: 40px;
+  width: 100%;
 }
 
 #userName {
@@ -47,8 +48,6 @@ export default {
   font-size: 18pt;
   text-shadow: 0 0.5px 2px black;
   padding: 20px 0;
-  border-bottom: 1px solid#fff;
-  margin: 0 310pt;
 }
 
 #companyName {

@@ -36,6 +36,7 @@ export default {
   font-size: 18pt;
   font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   padding-bottom: 10px;
+  text-shadow: 0 0 6px gray;
 }
 
 #aboutExplain {
@@ -45,16 +46,6 @@ export default {
   line-height: 1.5;
   margin: auto;
   width: 65%;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
 }
 
 a {

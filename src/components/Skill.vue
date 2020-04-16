@@ -94,3 +94,166 @@
 </template>
 
 <script>
+import FrontChart from '../components/FrontChart.vue';
+import BackChart from '../components/BackChart.vue';
+import DevChart from '../components/DevChart.vue';
+export default {
+  components: {
+    FrontChart,
+    BackChart,
+    DevChart
+  },
+  data(){
+    return {
+      frontChange: true,
+      backChange: false,
+      devChange: false
+    }
+  },
+  methods: {
+    F_change(){
+      this.frontChange=!this.frontChange,
+      this.backChange=false,
+      this.devChange=false
+    },
+    B_change(){
+      this.backChange=!this.backChange,
+      this.frontChange=false,
+      this.devChange=false
+    },
+    D_change(){
+      this.devChange=!this.devChange,
+      this.backChange=false,
+      this.frontChange=false
+          }
+  }
+}
+</script>
+
+
+<style lang="scss" scoped>
+@import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+#skillSection {
+  text-align: center;
+  height: auto;
+  background-color: #fff;
+  padding: 60px 0;
+  margin-top: -80px;
+}
+
+#skillTitle {
+  color: #20879f;
+  font-weight: bold;
+  font-size: 18pt;
+  font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  padding-bottom: 10px;
+  text-shadow: 0 0 6px gray;
+}
+
+#skillExplain {
+  font-size: 12pt;
+  color: #707070;
+  font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.5;
+  word-break: break-all;
+  margin: auto;
+  text-align: left;
+  width: 75%;
+  padding-bottom: 10px;
+}
+
+#gitHubLabel,
+#gitHubLink {
+  font-size: 12pt;
+  color: #20879f;
+  font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-weight: bold;
+}
+
+#skillCategories {
+  padding: 20px 0;
+
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  #front {
+    color: #b51a1a;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  #back {
+    color: #0f8839;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  #DevOps {
+    color: #571083;
+    font-size: 18px;
+    cursor: pointer;
+  }
+}
+
+#skillList {
+  font-size: 18px;
+  width: auto;
+
+  li {
+    display: inline-block;
+    margin: 10px 10px;
+  }
+
+  .front-change li {
+    background-color: rgba(181, 26, 26, 0.25);
+  }
+
+  .back-change li {
+    background-color: rgba(15, 136, 57, 0.25);
+  }
+
+  .dev-change li {
+    background-color: rgba(87, 16, 131, 0.25);
+  }
+
+  #front-end li {
+    color: rgba(181, 26, 26, 0.75);
+    height: 30px;
+    font-weight: bold;
+    padding: 12px 20px 2px 20px;
+    box-shadow: 0 0 8px gray;
+  }
+
+  #back-end li {
+    color: rgba(15, 136, 57, 0.75);
+    height: 30px;
+    font-weight: bold;
+    padding: 12px 20px 2px 20px;
+    box-shadow: 0 0 8px gray;
+  }
+
+  #devops li {
+    color: rgba(87, 16, 131, 0.75);
+    height: 30px;
+    font-weight: bold;
+    padding: 12px 20px 2px 20px;
+    box-shadow: 0 0 8px gray;
+  }
+}
+
+h3 {
+  margin: 40px 0 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  color: #42b983;
+}
+</style>
