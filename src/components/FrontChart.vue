@@ -10,7 +10,7 @@ export default {
         datasets: [
           {
             label: 'Front-end',
-            data: [50, 40, 30, 10, 10],
+            data: [40, 30, 20, 10, 10],
             backgroundColor: [
               'rgba(181, 26, 26, 0.25)'
             ],

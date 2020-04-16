@@ -3,7 +3,7 @@
     <span
       id="drawerButton"
       class="css-bar"
-    ><img src="../assets/menu.png"></span>
+    ><img src="../assets/batu.png"></span>
     <ul id="drawerMenuSection">
       <li
         id="drawerMenuItem"
@@ -49,7 +49,8 @@ export default {
         document.querySelector('#app'),
         400,
         'y'
-      )
+      ),
+      this.$emit('sample')
     }
   }
 }

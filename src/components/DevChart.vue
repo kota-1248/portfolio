@@ -6,11 +6,11 @@ export default {
   data () {
     return {
       data: {
-        labels: ['Linux', 'Git', 'GitHub', 'Firebase'],
+        labels: ['Linux', 'Git', 'GitHub', 'Firebase',],
         datasets: [
           {
             label: 'DevOps',
-            data: [30, 50, 40, 20],
+            data: [30, 45, 40, 20],
             backgroundColor: [
               'rgba(87, 16, 131, 0.25)'
             ],
