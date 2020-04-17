@@ -5,9 +5,7 @@
     </div>
     <div id="skillExplain">
       <p>
-        説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。
-        説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。
-        説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。
+        ポートフォリオを1人の力で作成したわけではないですが、作り上げる事が出来た事からGit、HTML＆CSSの技術はあるものとして考えました。他の言語は、知識を蓄えることしかできない為プロゲートで、わかりやすいと思ったものを高得点にしました。インフラエンジニアについて興味があるのでJava、Ruby、Pythonの言語をこれから勉強していきたいと考えています。
       </p>
     </div>
     <label id="gitHubLabel">
@@ -112,17 +110,17 @@ export default {
   },
   methods: {
     F_change(){
-      this.frontChange=!this.frontChange,
+      this.frontChange=true
       this.backChange=false,
       this.devChange=false
     },
     B_change(){
-      this.backChange=!this.backChange,
+      this.backChange=true
       this.frontChange=false,
       this.devChange=false
     },
     D_change(){
-      this.devChange=!this.devChange,
+      this.devChange=true
       this.backChange=false,
       this.frontChange=false
           }

@@ -5,7 +5,7 @@
     </div>
     <div id="visionExplain">
       <p>
-        これからのじぶん
+        地元でおきた豪雨災害にて、被害にあった友人と連絡が取れなくなったことがきっかけでITインフラについて興味を持ちました。HTMLやCSSをもっと勉強するとともに、Linuxシステムにおけるハードウェア、OS、ミドルウェアなど様々な構築の経験を持ち将来は構築だけにとどまらず、設計から携われるエンジニアになりたいと考えています。
       </p>
     </div>
   </div>
@@ -20,7 +20,7 @@
   background-color: #f5f5f5;
   text-align: center;
   padding: 20px 0;
-  height: 300px;
+  height: auto;
   width: 100%;
 }
 

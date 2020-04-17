@@ -9,14 +9,17 @@
       <label
         id="nav-open"
         for="nav-input"
-      ><span /></label>
+      ><span @click="openmenu" /></label>
       <label
         id="nav-close"
         class="nav-unshown"
         for="nav-input"
       />
-      <div id="nav-content">
-        <Menu />
+      <div
+        id="nav-content"
+        :class="{'nav-unshown': isActive}"
+      >
+        <Menu @sample="closemenu" />
       </div>
     </div>
   </div>
@@ -27,6 +30,19 @@ export default {
   name: "Header",
   components: {
     Menu
+  },
+  data(){
+    return{
+      isActive:false
+    }
+  },
+  methods:{
+    closemenu(){
+      this.isActive=true
+    },
+    openmenu(){
+      this.isActive=false
+    }
   }
 }
 </script>

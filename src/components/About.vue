@@ -5,7 +5,7 @@
     </div>
     <div id="aboutExplain">
       <p>
-        茨城県出身の新入社員です。大学では、国際経営学について学んでいました。
+        茨城県出身の新入社員です。大学在学中は主に国際経営学を専攻し企業のグローバル化について学びました。その分野から派生する形で管理会計学やITパスポートの勉強し、そこでITの仕組みについて興味を持ち、それからエンジニアとして未経験から技術を勉強中です。
       </p>
     </div>
   </div>
@@ -25,8 +25,8 @@ export default {
 #aboutSection {
   background-color: #f5f5f5;
   text-align: center;
-  padding: 40px 0;
-  height: 100px;
+  padding: 40px 0 90px 0;
+  height: auto;
   width: 100%;
 }
 

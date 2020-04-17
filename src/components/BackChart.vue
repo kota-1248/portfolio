@@ -6,11 +6,11 @@ export default {
   data () {
     return {
       data: {
-        labels: ['HTML', 'CSS', 'Javascript', 'SCSS', 'Vue'],
+        labels: ['Java', 'Ruby', 'RubyonRails','MySQL'],
         datasets: [
           {
-            label: 'Front-end',
-            data: [10, 20, 30, 40, 50],
+            label: 'Back-end',
+            data: [10, 40, 30, 10,],
             backgroundColor: [
               'rgba(15, 136, 57, 0.25)'
             ],

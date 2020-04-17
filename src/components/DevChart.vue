@@ -6,11 +6,11 @@ export default {
   data () {
     return {
       data: {
-        labels: ['HTML', 'CSS', 'Javascript', 'SCSS'],
+        labels: ['Linux', 'Git', 'GitHub', 'Firebase',],
         datasets: [
           {
-            label: 'Front-end',
-            data: [10, 20, 30, 40],
+            label: 'DevOps',
+            data: [30, 45, 40, 20],
             backgroundColor: [
               'rgba(87, 16, 131, 0.25)'
             ],
