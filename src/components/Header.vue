@@ -1,82 +1,153 @@
 <template>
-  <div id="app">
-    <button
-      class="btn btn-success"
-      @click="toggle"
-    >
-      toggle
-    </button>
-    <Drawer
-      align="left"
-      :closeable="true"
-      @close="toggle"
-    >
-      <div v-if="open" />
-    </Drawer>
-    <header>
-      <div id="nav-drawer">
-        <input
-          id="nav-input"
-          type="checkbox"
-          class="nav-unshown"
-        >
-        <label
-          id="nav-open"
-          for="nav-input"
-        ><span /></label>
-        <label
-          id="nav-close"
-          class="nav-unshown"
-          for="nav-input"
-        />
-        <div id="nav-content">
-          ここに中身を入れる
-        </div>
+  <div id="headerSection">
+    <div id="nav-drawer">
+      <input
+        id="nav-input"
+        type="checkbox"
+        class="nav-unshown"
+      >
+      <label
+        id="nav-open"
+        for="nav-input"
+      ><span @click="openmenu" /></label>
+      <label
+        id="nav-close"
+        class="nav-unshown"
+        for="nav-input"
+      />
+      <div
+        id="nav-content"
+        :class="{'nav-unshown': isActive}"
+      >
+        <Menu @sample="closemenu" />
       </div>
-    </header>
+    </div>
   </div>
 </template>
- 
 <script>
-import Drawer from "vue-simple-drawer";
-
+import Menu from "../components/Menu.vue"
 export default {
-  name: "App",
+  name: "Header",
   components: {
-    Drawer
+    Menu
   },
-  data() {
-    return {
-      open: false
+  data(){
+    return{
+      isActive:false
     }
   },
-  methods: {
-    toggle() {
-      this.open = !this.open
+  methods:{
+    closemenu(){
+      this.isActive=true
+    },
+    openmenu(){
+      this.isActive=false
     }
   }
-};
-</script>
-<style lang="scss">
-@import "~bootstrap/scss/bootstrap-reboot",
-  "~bootstrap/scss/buttons";
-</style>
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  padding-top: 150px;
-  margin: 0 auto;
-  width: 800px;
 }
-.absolute_test {
-    position:  absolute;        /* 要素の配置方法を指定 */
-    background-color: #ccc;     /* 背景色指定 */
-    padding:  20px;             /* 余白指定 */
-    left:  100px;                /* 左からの位置指定 */
-    top: 50px;                  /* 上からの位置指定 */
+</script>
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style lang="scss" scoped>
+#headerSection {
+  background-color: #f3f3f3;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  box-sizing: border-box;
+  max-width: 768px;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+
+  #headerButton {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    height: auto;
+    border-inline: none;
+  }
+
+  #nav-drawer {
+    position: relative;
+  }
+
+  /* チェックボックス等は非表示に */
+  .nav-unshown {
+    display: none;
+  }
+
+  /* アイコンのスペース */
+  #nav-open {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
+  }
+
+  /* ハンバーガーアイコンをCSSだけで表現 */
+  #nav-open span,
+  #nav-open span::before,
+  #nav-open span::after {
+    position: absolute;
+    height: 3px;/* 線の太さ */
+    width: 25px;/* 長さ */
+    border-radius: 3px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+  }
+
+  #nav-open span::before {
+    bottom: -8px;
+  }
+
+  #nav-open span::after {
+    bottom: -16px;
+  }
+
+  /* 閉じる用の薄黒カバー */
+  #nav-close {
+    display: none;/* はじめは隠しておく */
+    position: fixed;
+    z-index: 100;
+    top: 0;/* 全体に広がるように */
+    right: 0;
+    width: 100%;
+    max-width: 40px;
+    height: 40px;
+    background-color: #f3f3f3;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+  }
+
+  /* 中身 */
+  #nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;/* 最前面に */
+    width: 100%;/* 右側に隙間を作る */
+    max-width: 768px;/* 最大幅 */
+    height: 100%;
+    background: #fff;/* 背景色 */
+    transition: 0.3s ease-in-out;/* 滑らかに表示 */
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);/* 左に隠しておく */
+  }
+
+  /* チェックが入ったらもろもろ表示 */
+  #nav-input:checked ~ #nav-close {
+    display: block;/* カバーを表示 */
+    opacity: 0.5;
+  }
+
+  #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/* 中身を表示 */
+    box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
+  }
 }
 </style>

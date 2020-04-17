@@ -5,7 +5,7 @@
     </div>
     <div id="aboutExplain">
       <p>
-        ozawa
+        茨城県出身の新入社員です。大学在学中は主に国際経営学を専攻し企業のグローバル化について学びました。その分野から派生する形で管理会計学やITパスポートの勉強し、そこでITの仕組みについて興味を持ち、それからエンジニアとして未経験から技術を勉強中です。
       </p>
     </div>
   </div>
@@ -25,28 +25,27 @@ export default {
 #aboutSection {
   background-color: #f5f5f5;
   text-align: center;
-  padding: 10px;
+  padding: 40px 0 90px 0;
+  height: auto;
+  width: 100%;
 }
 
 #aboutTitle {
   color: #20879f;
   font-weight: bold;
   font-size: 18pt;
+  font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  padding-bottom: 10px;
+  text-shadow: 0 0 6px gray;
 }
 
 #aboutExplain {
   font-size: 12pt;
   color: #707070;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
+  font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.5;
+  margin: auto;
+  width: 65%;
 }
 
 a {
