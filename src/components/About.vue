@@ -25,7 +25,7 @@ export default {
 #aboutSection {
   background-color: #f5f5f5;
   text-align: center;
-  padding: 40px 0 90px 0;
+  padding: 20px 0 90px 0;
   height: auto;
   width: 100%;
 }
