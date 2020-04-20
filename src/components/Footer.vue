@@ -19,7 +19,7 @@ export default {
     clickSmoothScroll () {
       event.preventDefault()
       this.$SmoothScroll(
-        document.querySelector('#app'),
+        document.querySelector('headerSection'),
         400,
         'y'
       )
@@ -40,7 +40,7 @@ export default {
   #footerScroll {
     width: 25px;
     height: 25px;
-    border: 1px solid #fff;
+    border: 1px solid #000;
     border-radius: 50%;
     top: -10px;
     position: relative;
