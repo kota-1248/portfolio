@@ -1,8 +1,11 @@
 <script>
 import { Radar } from 'vue-chartjs';
+
+
 export default {
   name: 'FrontChart',
   extends: Radar,
+
   data () {
     return {
       data: {

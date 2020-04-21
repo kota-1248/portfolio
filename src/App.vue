@@ -63,6 +63,10 @@ export default {
       return this,scrollY > 200 ? true : false;
       }
   },
+
+  created() {
+    this.updateSkillCategories();
+  },
   
   mounted () {
      this.getSkills();
@@ -71,32 +75,9 @@ export default {
     window.addEventListener("load", () => {
       this.onScroll();
     });
-    },
-  
-  methods: {
-     getSkills() {
-      // dataのスキルを初期化する
-      this.skills = [];
-      // this.skillsを一時変数のitemsに参照コピーする
-      let items = this.skills;
-      // axios.getを用いてデプロイ済のfunctionにアクセスする
-      this.axios.get('https://us-central1-kota1248-98213.cloudfunctions.net/skills')
-        .then((response) => {
-          response.data.forEach(function(skill) {
-            // 取得したデータを１件ずつ配列に設定する
-            items.push(skill);
-          })
-        })
-        .catch((e) => {
-          alert(e);
-        });
-     },
-    // スクロール値の取得
-    onScroll() {
-      this.scrollY = window.pageYOffset;
-    }
-  }
-  };
+  },
+}
+
 
 </script>
 
