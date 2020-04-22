@@ -6,11 +6,11 @@ export default {
   data () {
     return {
       data: {
-        labels: ['Linux', 'Git', 'GitHub', 'Firebase',],
+        labels: [],
         datasets: [
           {
             label: 'DevOps',
-            data: [30, 45, 40, 20],
+            data: [],
             backgroundColor: [
               'rgba(87, 16, 131, 0.25)'
             ],
@@ -37,7 +37,16 @@ export default {
     }
   },
   mounted () {
-    this.renderChart(this.data, this.options)
-  }
+    this.getSkills()
+    this.renderChart(this.data, this.options,)
+  },
+  methods:{
+    getSkills(){
+      const names = this.$store.getters.skillName(2)
+       this.data.labels = names
+      const scores = this.$store.getters.skillScore(2)
+      this.data.datasets[0].data = scores
+    }
+  } 
 }
 </script>

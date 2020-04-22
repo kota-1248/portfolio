@@ -3,14 +3,13 @@
     <div id="app">
       <Header />
       <Main />
-      <div>{{ this.skills }}</div>
       <About />
       <Skill />
       <Vision />
-      <sample />
       <Footer />
     </div>
-    <transition name="fade">
+    
+    <!-- //*<transition name="fade">
       <a
         v-show="isShow"
         v-scroll-to="'#top'"
@@ -19,7 +18,7 @@
       >
         <i class="fa fa-angle-up fa-lg scroll-top__ico" />
       </a>
-    </transition>
+    </transition> -->
   </div>
 </template>
 
@@ -29,7 +28,6 @@ import Main from './components/Main.vue'
 import About from './components/About.vue'
 import Skill from './components/Skill.vue'
 import Vision from './components/Vision.vue'
-import sample from './components/sample.vue'
 import Footer from './components/Footer.vue'
 import Vue from "vue";
 import VueScrollTo from "vue-scrollto";
@@ -48,34 +46,12 @@ export default {
     About,
     Skill,
     Vision,
-    sample,
     Footer
   },
-  data() {
-    return {
-      scrollY: 0,
-      skills: []
-    }
-  },
-
-  computed: {
-      isShow() {
-      return this,scrollY > 200 ? true : false;
-      }
-  },
-
-  created() {
-    this.updateSkillCategories();
-  },
-  
   mounted () {
-     this.getSkills();
-    // スクロールを取得
-    window.addEventListener("scroll", this.onScroll);
-    window.addEventListener("load", () => {
-      this.onScroll();
-    });
-  },
+ this.$store.dispatch('updateSkillCategories')
+ },
+  
 }
 
 

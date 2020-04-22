@@ -6,11 +6,11 @@ export default {
   data () {
     return {
       data: {
-        labels: ['Java', 'Ruby', 'RubyonRails','MySQL'],
+        labels: [],
         datasets: [
           {
             label: 'Back-end',
-            data: [10, 40, 30, 10,],
+            data: [],
             backgroundColor: [
               'rgba(15, 136, 57, 0.25)'
             ],
@@ -36,8 +36,17 @@ export default {
 }
     }
   },
-  mounted () {
-    this.renderChart(this.data, this.options)
-  }
+ mounted () {
+    this.getSkills()
+    this.renderChart(this.data, this.options,)
+  },
+  methods:{
+    getSkills(){
+      const names = this.$store.getters.skillName(1)
+       this.data.labels = names
+      const scores = this.$store.getters.skillScore(1)
+      this.data.datasets[0].data = scores
+    }
+  } 
 }
 </script>

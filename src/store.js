@@ -1,38 +1,49 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-import axios from 'axios';
-
-
-Vue.use(Vuex);
-
+import Vue from 'vue'
+import Vuex from 'vuex'
+import axios from 'axios'
+Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
-    skillCategories: [],
+    skills:[],
+    loaded:false
   },
-
-  getters: {
-    getSkills:(state) => (category) => {
-      if (state.skillCategories.length > 0) { 
-        return state.skillCategories.find((skill) => skill.category===category);
-      }
-    return [];
-    },
+   mutations: {
+    setSkillCategories (state,payload) {
+    state.skills = payload
+    state.loaded = true
+    }
   },
-
-  mutations: {
-    skillCategories(state, payload) {
-      state.skillCategories = payload.skillCategories;
-    },
-  },
-
   actions: {
-    async updateSkillCategories({commit}) {
-      const skillCategories = [];
-      const res = await axios.get('https://us-central1-kota1248-98213.cloudfunctions.net/skills')
-      res.data.forEach((category) => {
-        skillCategories.push(category);
-      });    
-      commit('setSkillCategories',{skillCategories});
+    updateSkillCategories:function({commit}) {
+      
+      return axios.get('https://us-central1-kota1248-98213.cloudfunctions.net/skillCategories')
+      .then(response => {
+        commit('setSkillCategories',response.data);
+      })
     },
   },
-})
+  getters: {
+    skillName: (state) => (index) => {
+      const skillNameArray = []
+      if(state.skills){
+
+        state.skills[index].skills.forEach((Skill) => {
+          skillNameArray.push(Skill.name)
+        })
+      }
+      return skillNameArray
+    },
+    skillScore: (state) => (index) => {
+      const skillScoreArray = []
+      if(state.skills[index]){
+        state.skills[index].skills.forEach((Skill) => {
+          skillScoreArray.push(Skill.score)
+        })
+      }
+      return skillScoreArray
+    },
+    
+    }
+  }
+  
+)
