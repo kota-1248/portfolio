@@ -32,9 +32,4 @@ app.get('/', (req, res) => {
   });
   // regionを指定してファンクションを定義(CORS対策)
   exports.skills = functions.region('us-central1').https.onRequest(app);
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+
