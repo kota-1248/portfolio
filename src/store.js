@@ -15,7 +15,8 @@ export default new Vuex.Store({
   },
   actions: {
     updateSkillCategories:function({commit}) {
-      
+      const functionsUrl = 'https://us-central1-' + process.env.VUE_APP_FUNCTIONS_API + '.cloudfunctions.net/skillCategories';
+      axios.get(functionsUrl)
       return axios.get('https://us-central1-kota1248-98213.cloudfunctions.net/skillCategories')
       .then(response => {
         commit('setSkillCategories',response.data);

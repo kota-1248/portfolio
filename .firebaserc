@@ -1,5 +1,21 @@
 {
   "projects": {
     "default": "kota1248-98213"
+  },
+  "targets": {
+    "kota1248-98213": {
+      "hosting": {
+        "portfolio": [
+          "kota1248-98213"
+        ]
+      }
+    },
+    "devportfolio-1248": {
+      "hosting": {
+        "portfolio": [
+          "devportfolio-1248"
+        ]
+      }
+    }
   }
 }
