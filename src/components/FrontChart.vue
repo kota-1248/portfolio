@@ -1,16 +1,19 @@
 <script>
 import { Radar } from 'vue-chartjs';
+
+
 export default {
   name: 'FrontChart',
   extends: Radar,
+
   data () {
     return {
       data: {
-        labels: ['HTML', 'CSS', 'Javascript', 'SCSS', 'Vue'],
+        labels: [],
         datasets: [
           {
             label: 'Front-end',
-            data: [40, 30, 20, 10, 10],
+            data: [],
             backgroundColor: [
               'rgba(181, 26, 26, 0.25)'
             ],
@@ -37,7 +40,16 @@ export default {
     }
   },
   mounted () {
-    this.renderChart(this.data, this.options)
-  }
+    this.getSkills()
+    this.renderChart(this.data, this.options,)
+  },
+  methods:{
+    getSkills(){
+      const names = this.$store.getters.skillName(0)
+       this.data.labels = names
+      const scores = this.$store.getters.skillScore(0)
+      this.data.datasets[0].data = scores
+    }
+  } 
 }
 </script>

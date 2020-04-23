@@ -74,7 +74,7 @@
       </ul>
     </div>
     <div
-      v-if="frontChange"
+      v-if="frontChange && loaded"
     >
       <FrontChart />
     </div>
@@ -108,7 +108,15 @@ export default {
       devChange: false
     }
   },
+  computed:{
+   loaded(){
+      return this.$store.state.loaded
+    },
+  },
   methods: {
+    setCurrentChart(chart) {
+      this.currentChart = chart;
+    },
     F_change(){
       this.frontChange=true
       this.backChange=false,
